@@ -42,4 +42,12 @@ public class JunitParameterizedTest {
         assertThat(num % 5).isEqualTo(0);
     }
 
+    @DisplayName("Parameterized test value {0}, {1}")
+    @ParameterizedTest(name = "Param test: {0} contains hello; {1} divide by 5")
+    @CsvFileSource(resources = "/file.csv", delimiter = ',')
+    public void shouldCscFileContainsProperValue2(String text, int num){
+        assertThat(text.toLowerCase()).contains("hello");
+        assertThat(num % 5).isEqualTo(0);
+    }
+
 }
