@@ -70,6 +70,7 @@ public class JunitTest {
         @DisplayName("Example list tests")
         @Test
         public void zad2() {
+            //comment
             List<Integer> result = Arrays.asList(1,2,3,4,5);
             List<Integer> expected = Arrays.asList(3,4,5);
             assertThat(result).containsAnyIn(expected);
