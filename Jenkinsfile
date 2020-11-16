@@ -14,9 +14,17 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            allure([])
-        }
-    }
+   post {
+               always {
+                   allure([
+                            includeProperties: false,
+                            jdk: '',
+                            properties: [[key: 'allure.issues.tracker.pattern', value: 'http://tracker.company.com/%s'],
+                            [key: 'allure.tests.management.pattern', value: 'http://tms.company.com/%s'],
+                            ],
+                            reportBuildPolicy: 'ALWAYS',
+                            results: [[path: 'qajunit/target/allure-results']]
+                            ])
+               }
+           }
 }
