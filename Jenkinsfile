@@ -13,7 +13,7 @@ pipeline {
 
         stage ('run') {
             steps {
-               sh "mvn clean test -Dgroups=${params.tag} -DexcludedGroups=${params.extag}"
+               sh "mvn clean test -Dgroups=${params.TAG} -DexcludedGroups=${params.EXTAG}"
             }
         }
     }
