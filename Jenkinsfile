@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters {
-        choice(name: 'TAG', choices:['', 'junit', 'param', 'wordpress'])
-        choice(name: 'EXTAG', choices:['', 'junit', 'param', 'wordpress'])
+        choice(name: 'TAG', choices:['', 'junit', 'param', 'wordpress', 'frontend'])
+        choice(name: 'EXTAG', choices:['', 'junit', 'param', 'wordpress', 'frontend'])
     }
     stages {
         stage ('checkout') {
@@ -27,7 +27,7 @@ pipeline {
                             [key: 'allure.tests.management.pattern', value: 'http://tms.company.com/%s'],
                             ],
                             reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'qajunit/target/allure-results']]
+                            results: [[path: 'qajunit/target/allure-results'], [path: 'qagui/target/allure-results']]
                             ])
                }
            }
