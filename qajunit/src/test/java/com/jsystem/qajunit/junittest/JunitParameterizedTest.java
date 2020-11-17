@@ -1,6 +1,7 @@
 package com.jsystem.qajunit.junittest;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -9,6 +10,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertTrue;
 
+@Tag("param")
 @DisplayName("Param tests")
 public class JunitParameterizedTest {
 
@@ -26,6 +28,7 @@ public class JunitParameterizedTest {
         assertThat(value.toLowerCase()).contains("hello");
     }
 
+    @Tag("example tag")
     @DisplayName("Parameterized test value {0}, {1}")
     @ParameterizedTest(name = "Param test: {0} contains hello; {1} equal to 5")
     @CsvSource(value = {"Hello, 5", "Hello junit, 5"}, delimiter = ',')
@@ -42,6 +45,7 @@ public class JunitParameterizedTest {
         assertThat(num % 5).isEqualTo(0);
     }
 
+    @Tag("wordpress")
     @DisplayName("Parameterized test value {0}, {1}")
     @ParameterizedTest(name = "Param test: {0} contains hello; {1} divide by 5")
     @CsvFileSource(resources = "/file.csv", delimiter = ',')
