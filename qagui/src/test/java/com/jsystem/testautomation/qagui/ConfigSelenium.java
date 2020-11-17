@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ConfigSelenium {
 
-    protected WebDriver driver;
+    public WebDriver driver;
 
     @BeforeAll
     public static void setupBeforeAll() throws URISyntaxException {
@@ -30,7 +30,9 @@ public class ConfigSelenium {
 
     @AfterEach
     public void  tearDown(){
-        driver.quit();
+        driver.close();
     }
+
+
 
 }
