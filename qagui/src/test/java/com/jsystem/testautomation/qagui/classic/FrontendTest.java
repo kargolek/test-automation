@@ -17,7 +17,7 @@ import java.net.URISyntaxException;
 
 import static com.google.common.truth.Truth.assertThat;
 
-@Tag("Frontend")
+@Tag("frontend")
 @DisplayName("Frontend Test")
 public class FrontendTest extends ConfigLocalSelenium {
 
