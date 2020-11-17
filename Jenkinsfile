@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    parameters {
+        choice(name: 'TAG', choices:['junit', 'param', 'wordpress'])
+        choice(name: 'EXTAG', choices:['junit', 'param', 'wordpress'])
+    }
     stages {
         stage ('checkout') {
             steps {
