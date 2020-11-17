@@ -10,7 +10,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@Tag("Junit")
+@Tag("junit")
 @DisplayName("Junit tests")
 public class JunitTest {
 
