@@ -27,7 +27,7 @@ public class FrontendTest extends ConfigLocalSelenium {
     public UserProfilePage userProfilePage;
 
     @BeforeEach
-    public void setupFrontendTest() throws URISyntaxException {
+    public void setupFrontendTest() {
         mainWordPressPage = new MainWordPressPage(driver);
         loginPage = new LoginPage(driver);
         mainUserPage = new MainUserPage(driver);
