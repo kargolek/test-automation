@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
-public class ConfigSelenium {
+public class ConfigGridSelenium {
 
     public WebDriver driver;
 
@@ -30,9 +30,7 @@ public class ConfigSelenium {
 
     @AfterEach
     public void  tearDown(){
-        driver.close();
+        driver.quit();
     }
-
-
 
 }

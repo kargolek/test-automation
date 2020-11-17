@@ -1,10 +1,11 @@
 package com.jsystem.testautomation.qagui.classic;
 
-import com.jsystem.testautomation.qagui.ConfigSelenium;
+import com.jsystem.testautomation.qagui.ConfigLocalSelenium;
 import com.jsystem.testautomation.qagui.classic.page.LoginPage;
 import com.jsystem.testautomation.qagui.classic.page.MainUserPage;
 import com.jsystem.testautomation.qagui.classic.page.MainWordPressPage;
 import com.jsystem.testautomation.qagui.classic.page.UserProfilePage;
+import com.jsystem.testautomation.qagui.config.GuiConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -18,7 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 @Tag("Frontend")
 @DisplayName("Frontend Test")
-public class FrontendTest extends ConfigSelenium {
+public class FrontendTest extends ConfigLocalSelenium {
 
     public MainWordPressPage mainWordPressPage;
     public LoginPage loginPage;
@@ -31,16 +32,16 @@ public class FrontendTest extends ConfigSelenium {
         loginPage = new LoginPage(driver);
         mainUserPage = new MainUserPage(driver);
         userProfilePage = new UserProfilePage(driver);
-        driver.get("http://wordpress.com");
 
+        driver.get(GuiConfig.BASE_URL);
         mainWordPressPage.loginButton.click();
         loginPage.username.clear();
         loginPage.username.click();
-        loginPage.username.sendKeys("karol.orlowicz@gmail.com");
+        loginPage.username.sendKeys(GuiConfig.LOGIN);
         loginPage.buttonPrimary.click();
         loginPage.password.clear();
         loginPage.password.click();
-        loginPage.password.sendKeys("zaq12WSX");
+        loginPage.password.sendKeys(GuiConfig.PASSWORD);
         loginPage.buttonPrimary.click();
 
         WebDriverWait wait = new WebDriverWait(driver, 30);

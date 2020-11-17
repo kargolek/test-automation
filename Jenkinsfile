@@ -27,7 +27,7 @@ pipeline {
                             [key: 'allure.tests.management.pattern', value: 'http://tms.company.com/%s'],
                             ],
                             reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'qajunit/target/allure-results']]
+                            results: [[path: 'qajunit/target/allure-results'], [path: 'qagui/target/allure-results']]
                             ])
                }
            }
